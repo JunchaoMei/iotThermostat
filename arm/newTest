@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# scp -P 2222 thermostatd hw2 S80thermostatd thermostat junchao@localhost:~/project/
+# run as root
+
+# clear old files
+rm /etc/init.d/S80thermostatd
+rm /usr/sbin/S80thermostatd
+rm /usr/sbin/hw2
+rm /usr/sbin/thermostat
+rm /usr/sbin/thermostatd
+
+# allocate files
+cp /junchao/project/S80thermostatd /etc/init.d/
+mv /junchao/project/* /usr/sbin/
+
+# chown files
+chown root:root /etc/init.d/S80thermostatd
+chown root:root /usr/sbin/*
+
+# chmod files
+chmod 755 /usr/sbin/hw2
+chmod 755 /usr/sbin/thermostat
+chmod 755 /usr/sbin/thermostatd
+chmod 755 /usr/sbin/S80thermostatd
+chmod 755 /etc/init.d/S80thermostatd
+chmod 700 /root/newTest
